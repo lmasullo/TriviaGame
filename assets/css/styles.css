@@ -1,0 +1,50 @@
+body {
+  background-image: url("/assets/images/united-squares.png");
+}
+
+#main {
+  background-color: green;
+  height: 600px;
+  margin-top: 25px;
+}
+
+#title {
+  margin-top: 50px;
+  background-color: blue;
+}
+
+h1 {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: purple;
+}
+
+#questions {
+  width: 75%;
+  background-color: red;
+  display: none
+}
+
+#start {
+  height: 50px;
+  width: 300px;
+  margin-top: 150px;
+  background-color: yellow;
+}
+
+#timer {
+  font-size: 32px;
+}
+
+#question {
+  font-size: 32px;
+}
+
+.answer {
+  width: 50%;
+  margin: auto;
+  font-size: 32px;
+}
+
+.answer:hover {
+  background-color: yellow;
+}
