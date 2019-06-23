@@ -10,21 +10,22 @@ body {
 
 #title {
   margin-top: 50px;
-  background-color: blue;
+  /* background-color: blue; */
 }
 
 h1 {
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  color: purple;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: yellow;
 }
 
 #questions {
   width: 75%;
-  background-color: red;
-  display: none
+  /* background-color: red; */
+  display: none;
 }
 
-#start {
+.start {
   height: 50px;
   width: 300px;
   margin-top: 150px;
@@ -40,7 +41,7 @@ h1 {
 }
 
 .answer {
-  width: 50%;
+  width: 60%;
   margin: auto;
   font-size: 32px;
 }
