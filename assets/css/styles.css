@@ -1,10 +1,11 @@
 body {
-  background-image: url("/assets/images/united-squares.png");
+  //background-image: url("/assets/images/united-squares.png");
+  background-image: url("/assets/images/trivia-tuesdays-background.jpg");
 }
 
 #main {
   background-color: green;
-  height: 600px;
+  height: 850px;
   margin-top: 25px;
 }
 
@@ -13,10 +14,10 @@ body {
   /* background-color: blue; */
 }
 
-h1 {
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+.trivia {
+  font-family: "Comic Sans MS", cursive, sans-serif;
   color: yellow;
+  font-size: 5em;
 }
 
 #questions {
@@ -30,13 +31,19 @@ h1 {
   width: 300px;
   margin-top: 150px;
   background-color: yellow;
+  border: solid 2px black;
 }
 
 #timer {
   font-size: 32px;
+  color: #FFCF79;
 }
 
 #question {
+  font-size: 32px;
+}
+
+#message {
   font-size: 32px;
 }
 
@@ -48,4 +55,9 @@ h1 {
 
 .answer:hover {
   background-color: yellow;
+}
+
+#startOver:hover {
+  font-size: 1.2em;
+  border: solid 2px black;
 }
