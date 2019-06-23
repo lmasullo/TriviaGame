@@ -37,7 +37,7 @@ $(document).ready(() => {
         'Which movie includes a giant bunny-like spirit who has magic powers including growing trees?',
       correctAnswer: 'My Neighbor Totoro',
       answers: ['Hop', 'Rise of the Guardians', 'Alice in Wonderland', 'My Neighbor Totoro'],
-      image: 'https://media.giphy.com/media/pt0EKLDJmVvlS/giphy.gif'
+      image: 'https://media.giphy.com/media/omHPYZttAVAAw/giphy.gif'
     },
     {
       question: 'What was the first monster to appear alongside Godzilla?',
@@ -88,10 +88,10 @@ $(document).ready(() => {
   //  Set our number counter, seconds to count down.
   let number = 10;
 
-  //  Variable that will hold our interval ID when we execute the "run" function
-  let intervalId;
+  // Variable that will hold our interval ID when we execute the "run" function
+  let intervalId = "";
 
-  // Set the initial correct and incorrect values
+  // Set the initial correct, incorrect, and unanswered values
   let correct = 0;
   let incorrect = 0;
   let unanswered = 0;
@@ -103,7 +103,7 @@ $(document).ready(() => {
 
     //Check if gone through all the questions
     if (questNum === 10) {
-      
+      // If gone through all questions
       // Hide Question, Answers, and image
       $('#question').hide();
       $('#answers').hide();
@@ -116,8 +116,9 @@ $(document).ready(() => {
       $('#message').append(`<br>Correct Answers: ${correct}`);
       $('#message').append(`<br>Incorrect Answers: ${incorrect}`);
       $('#message').append(`<br>Unanswered: ${unanswered}<br>`);
+      //Show the Start Over button
       $('#startOver').removeAttr('hidden');
-    //If more questions to show, load the next
+    //If more questions to show, load the next question
     } else {
       //Call the loadQuestion function
       loadQuestion();
@@ -132,7 +133,7 @@ $(document).ready(() => {
     //  Show the number in the #show-number tag.
     $('#timerSec').html(number);
 
-    //  Once number hits zero...
+    //  Once number hits zero, time's up
     if (number === 0) {
       console.log('Time Up!');
       
@@ -174,20 +175,21 @@ $(document).ready(() => {
     }
   } // End Stop Function
 
+  //  The run function sets an interval that runs the decrement function once a second.
+  //  Clearing the intervalId prior to setting our new intervalId will not allow multiple instances.
+  function run() {
+    //Show the timer
+    $('#timer').removeAttr('hidden');
+    number = 10;
+    $('#timerSec').html(number);
+
+    clearInterval(intervalId);
+    intervalId = setInterval(decrement, 1000);
+  }
+
   // Function to load a question
   function loadQuestion() {
-    //  The run function sets an interval that runs the decrement function once a second.
-    //  Clearing the intervalId prior to setting our new intervalId will not allow multiple instances.
-    function run() {
-      //Show the timer
-      $('#timer').removeAttr('hidden');
-      number = 10;
-      $('#timerSec').html(number);
-
-      clearInterval(intervalId);
-      intervalId = setInterval(decrement, 1000);
-    }
-
+    
     //  Execute the run function and start the timer.
     run();
 
@@ -249,12 +251,11 @@ $(document).ready(() => {
         $('#message').show();
         $('#message').html('Correct!');
 
-
       //Picked the wrong answer
       } else {
         console.log('Wrong');
 
-        // increment Incorrect answer counter
+        // Increment Incorrect answer counter
         incorrect++;
 
         // Display Incorrect Message
@@ -280,9 +281,6 @@ $(document).ready(() => {
     // Make start button hidden
     $('#start').hide();
 
-    // Make question div visible
-    //$('#questions').show();
-
     // Call the Load Question function
     loadQuestion();
   }); // End Start Button click
@@ -297,7 +295,7 @@ $(document).ready(() => {
     incorrect = 0;
     unanswered  = 0;
 
-    // Make start button hidden
+    // Make Start Over button hidden
     $('#startOver').hide();
 
     // Call the Load Question function
