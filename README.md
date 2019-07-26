@@ -4,8 +4,8 @@ Trivia Game
 
 > Description:
 
-This is a challenging hangman game.
-Press any key to get started. The game will track your guesses. Remember you only get 12 tries!
+This is a fun movie trivia game.
+Press the Start button to get started. You will presented with movie trivia questions. You only have 10 seconds to make a choice, so don't delay! Good Luck!
 
 ## Getting Started
 
@@ -25,11 +25,11 @@ To deploy this on a live system, just upload the included files to your server.
 
 ## Built With
 
-HTML, CSS, and vanilla Javascript
+HTML, CSS, and jQuery
 
 ## Demo
 
-https://lmasullo.github.io/Word-Guess/
+https://lmasullo.github.io/TriviaGame/
 
 ## Versioning
 
